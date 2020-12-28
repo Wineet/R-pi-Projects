@@ -1,0 +1,31 @@
+To do: 9 Dec 
+Freez the requirement
+Draw Design 
+
+Software Architecutre for small Embedded server.
+
+In real life industrial application we may come across many embedded Devices are working together, sometimes they need to be centrally  monitored and served. This can be achieved by small embedded server. Proposing a software architecure which can be generically utilised as a system monitor server where multiple processor or embedded devices are present on a local network.
+
+soc layer:
+>message transmit thread:
+	Verify received Message payload from application state machine, decode the payload and transmit the message to down layer
+>message Reception thread:
+	Verify received Message payload from lower driver, decode the payload Format, transmit the message to application state machine
+		
+connection Manager:
+	Accept Valid and authorisation Incoming Connection request, Add connection info to data strcture
+	Dead & Disconnected connections will be discarded and information of connections will be deleted. 
+	connection information received from connection Manager or SOC layer, After periodic time all clients connection alive or not.
+
+client Manager
+	Broadcast Data to clients
+	Serving client Queries
+	 
+Appl state Machine 
+	Application/Feature code 
+
+server Logger: 
+		Collect the Important logs in a file with log_level
+		
+Application Interface BUS: 
+		Interface bus helps to communicate between all software modules.
